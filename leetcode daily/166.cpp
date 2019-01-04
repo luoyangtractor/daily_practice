@@ -6,48 +6,43 @@
 //
 //class Solution {
 //public:
-//	string fractionToDecimal(int numerator, int denominator) 
+//	string fractionToDecimal(int numerator, int denominator)
 //	{
-//		long long zheng = (long long)numerator / denominator;
-//		long long yu = (long long)numerator % denominator;
-//		string ans_zheng = to_string(zheng);
-//		if (yu == 0)return ans_zheng;
-//		ans_zheng += '.';
-//		vector<int> vec;
-//		unordered_map<int, int>tmp;
-//		int rot = 0;
-//		while (1)
+//		string ans;
+//		if (numerator < 0 && denominator>0 || numerator > 0 && denominator < 0)ans += '-';
+//		long long yu = (long long)numerator % (long long)denominator;
+//		long long zheng = (long long)numerator / (long long)denominator;
+//		zheng = abs(zheng);
+//		yu = abs(yu);
+//		ans += to_string(zheng);
+//		if (yu == 0)return ans;
+//		ans += '.';
+//		string tmp;
+//		unordered_map<long long, int> map;
+//		int index = -1;
+//		while (yu != 0)
 //		{
 //			yu *= 10;
-//			zheng = yu / denominator;
-//			yu = yu % denominator;
-//			if (yu == 0)
+//			if (map.find(yu) != map.end())
 //			{
-//				vec.push_back(zheng);
-//				for (int i = 0; i < vec.size(); i++)
-//				{
-//					ans_zheng += to_string(vec[i]);
-//				}
-//				return ans_zheng;
-//			}
-//			if (tmp.find(yu) != tmp.end())
-//			{
-//				rot = tmp[yu];
+//				index = map[yu];
 //				break;
 //			}
-//			else tmp.insert(make_pair(yu,vec.size()));
-//			vec.push_back(zheng);
+//
+//			map.insert(make_pair(yu, tmp.length()));
+//			zheng = yu / denominator;
+//			yu = yu % denominator;
+//
+//			zheng = abs(zheng);
+//			tmp += to_string(zheng);
 //		}
-//		for (int i = 0; i < rot; i++)
+//		if (index < 0)return ans + tmp;
+//		else
 //		{
-//			ans_zheng += to_string(vec[i]);
+//			ans += tmp.substr(0, index);
+//			ans += '(';
+//			ans += tmp.substr(index, tmp.length() - index);
+//			return ans + ')';
 //		}
-//		ans_zheng += '(';
-//		for (int i = rot; i < vec.size(); i++)
-//		{
-//			ans_zheng += to_string(vec[i]);
-//		}
-//		ans_zheng += ')';
-//		return ans_zheng;
 //	}
 //};

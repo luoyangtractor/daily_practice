@@ -241,7 +241,9 @@
     <ClCompile Include="205.cpp" />
     <ClCompile Include="206.cpp" />
     <ClCompile Include="207.cpp" />
+    <ClCompile Include="208.cpp" />
     <ClCompile Include="209.cpp" />
+    <ClCompile Include="211.cpp" />
     <ClCompile Include="213.cpp" />
     <ClCompile Include="215.cpp" />
     <ClCompile Include="alitest.cpp" />
