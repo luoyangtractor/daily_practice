@@ -246,6 +246,9 @@
     <ClCompile Include="211.cpp" />
     <ClCompile Include="213.cpp" />
     <ClCompile Include="215.cpp" />
+    <ClCompile Include="217.cpp" />
+    <ClCompile Include="219.cpp" />
+    <ClCompile Include="220.cpp" />
     <ClCompile Include="alitest.cpp" />
     <ClCompile Include="alitest1.cpp" />
     <ClCompile Include="ali_test2.cpp" />
@@ -270,6 +273,9 @@
     <ClCompile Include="wangyi_test2.cpp" />
     <ClCompile Include="xiatest1.cpp" />
     <ClCompile Include="xiatest2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="210.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
